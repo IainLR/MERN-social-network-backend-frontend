@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://Iain:lyall1725@cluster0.v78pv.mongodb.net/Cluster0?retryWrites=true&w=majority",
+   
     "jwtSecret": "NCC-1701-D"
 }
