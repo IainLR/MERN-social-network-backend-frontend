@@ -1,6 +1,3 @@
 {
-    "mongoURI": "mongodb+srv://Iain:lyall1725@cluster0.v78pv.mongodb.net/Cluster0?retryWrites=true&w=majority",
-    "jwtSecret": "NCC-1701-D",
-    "githubClientId": "865edbc62c17b47a9a88",
-    "githubSecret": "f12d971a18301278b0dd9011b06673d6cbc4aa65"
+ 
 }
