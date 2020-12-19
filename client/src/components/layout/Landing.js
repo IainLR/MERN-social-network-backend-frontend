@@ -13,7 +13,7 @@ const Landing = ({ isAuthenticated }) => {
         <section className="landing">
         <div className="dark-overlay">
           <div className="landing-inner">
-            <h1 className="x-large">MusicThings</h1>
+            <h1 className="x-large">BandAide</h1>
             <p className="lead">
               Create and manage your profile, share posts, and collaborate with other musicians
             </p>
