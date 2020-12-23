@@ -23,7 +23,7 @@ const Profile = ({ getProfileById, profile: { profile, loading}, auth, match }) 
                 {auth.isAuthenticated && auth.loading === false && auth.user._id === profile.user._id && (<Link to='/edit-profile' className='btn btn-dark'> 
                 Edit Profile
                 </Link>)}
-                <div class="profile-grid my-1">
+                <div className="profile-grid my-1">
                     <ProfileTop profile={profile} />
                     <ProfileAbout profile={profile} />
                     <div className="profile-exp bg-white p-2">
@@ -50,7 +50,7 @@ const Profile = ({ getProfileById, profile: { profile, loading}, auth, match }) 
                         </Fragment>) : (<h4> No education credentials</h4>)}
                     </div>
 
-                    
+
                 </div>
                 </Fragment>}
         </Fragment>
