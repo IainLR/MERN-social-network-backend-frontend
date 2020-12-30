@@ -79,50 +79,50 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
         <div className="form-group">
           <select name="status" value={status} 
           onChange={(e) => handleChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
+            <option value="0">* Select Prefered Role/Instrument</option>
+            <option value="Instrumentalist">Instrumentalist</option>
+            <option value="Vocalist">Vocalist</option>
+            <option value="Producer">Producer</option>
+            <option value="Bassist">Bassist</option>
+            <option value="Percussionist">Percussionist</option>
             <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
+            <option value="Guitarist">Guitarist</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text"
-            >Give us an idea of where you are at in your career</small
+            >Give us an idea of your current focus</small
           >
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Company" name="company" value={company} 
+          <input type="text" placeholder="Band/Project" name="company" value={company} 
           onChange={(e) => handleChange(e)}/>
           <small className="form-text"
-            >Could be your own company or one you work for</small
+            >Preferably your current band or project</small
           >
         </div>
         <div className="form-group">
           <input type="text" placeholder="Website" name="website" value={website} 
           onChange={(e) => handleChange(e)}/>
           <small className="form-text"
-            >Could be your own or a company website</small
+            >Could be your own or a band website</small
           >
         </div>
         <div className="form-group">
           <input type="text" placeholder="Location" name="location" value={location} 
           onChange={(e) => handleChange(e)}/>
           <small className="form-text"
-            >City & state suggested (eg. Boston, MA)</small
+            >City & state suggested (eg. Houston, TX)</small
           >
         </div>
         <div className="form-group">
-          <input type="text" placeholder="* Skills" name="skills" value={skills} 
+          <input type="text" placeholder="* Instruments/Skills" name="skills" value={skills} 
           onChange={(e) => handleChange(e)}/>
           <small className="form-text"
             >Please use comma separated values (eg.
-            HTML,CSS,JavaScript,PHP)</small
+            guitar,bass,drums,hurdy-gurdy)</small
           >
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <input
             type="text"
             placeholder="Github Username"
@@ -133,7 +133,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
             >If you want your latest repos and a Github link, include your
             username</small
           >
-        </div>
+        </div> */}
         <div className="form-group">
           <textarea placeholder="A short bio of yourself" name="bio" value={bio} 
           onChange={(e) => handleChange(e)}>

@@ -32,12 +32,12 @@ const AddEducation = ({ addEducation, history }) => {
        Add Your Education
       </h1>
       <p className="lead">
-        <i className="fas fa-code-branch"></i> Add any school or bootcamp that you have attended
+        <i className="fas fa-drum"></i> Add any school that you have attended
       </p>
       <small>* = required field</small>
       <form className="form" onSubmit={(e) => handleSubmit(e)}>
         <div className="form-group">
-          <input type="text" placeholder="* School or Bootcamp" name="school" 
+          <input type="text" placeholder="* School" name="school" 
           value={school} onChange={(e) => handleChange(e)}
           required />
         </div>

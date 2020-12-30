@@ -32,18 +32,17 @@ const AddExperience = ({ addExperience, history }) => {
        Add An Experience
       </h1>
       <p className="lead">
-        <i className="fas fa-code-branch"></i> Add any developer/programming
-        positions that you have had in the past
+        <i className="fas fa-drum"></i> Add any bands or projects that you have worked on in the past
       </p>
       <small>* = required field</small>
       <form className="form" onSubmit={(e) => handleSubmit(e)}>
         <div className="form-group">
-          <input type="text" placeholder="* Job Title" name="title" 
+          <input type="text" placeholder="* Role" name="title" 
           value={title} onChange={(e) => handleChange(e)}
           required />
         </div>
         <div className="form-group">
-          <input type="text" placeholder="* Company" name="company" 
+          <input type="text" placeholder="* Band/Project" name="company" 
           value={company} onChange={(e) => handleChange(e)}
           required />
         </div>
@@ -65,7 +64,7 @@ const AddExperience = ({ addExperience, history }) => {
               setFormData({ ...formData, current: !current})
               toggleDisabled(!toDateDisabled)
           }}
-          /> {' '}Current Job</p>
+          /> {' '}Current Project</p>
         </div>
         <div className="form-group">
           <h4>To Date</h4>
@@ -79,7 +78,7 @@ const AddExperience = ({ addExperience, history }) => {
             name="description"
             cols="30"
             rows="5"
-            placeholder="Job Description"
+            placeholder="Project Description"
             value={description} onChange={(e) => handleChange(e)}
           ></textarea>
         </div>
