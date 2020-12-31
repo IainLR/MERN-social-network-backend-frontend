@@ -1,97 +1,125 @@
-import React, {Fragment, useState} from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { addExperience } from '../../actions/profile'
+import React, { Fragment, useState } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addExperience } from '../../actions/profile';
 
 const AddExperience = ({ addExperience, history }) => {
-    const [formData, setFormData] = useState({
-        company: '',
-        title: '',
-        location: '',
-        from: '',
-        to: '',
-        current: false,
-        description: ''
-    })
+  const [formData, setFormData] = useState({
+    company: '',
+    title: '',
+    location: '',
+    from: '',
+    to: '',
+    current: false,
+    description: '',
+  });
 
-    const [toDateDisabled, toggleDisabled] = useState(false)
+  const [toDateDisabled, toggleDisabled] = useState(false);
 
-    const { company, title, location, from, to, current, description} = formData
+  const { company, title, location, from, to, current, description } = formData;
 
-    const handleChange = (e) => setFormData({...formData, [e.target.name]: e.target.value})
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        addExperience(formData, history)
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addExperience(formData, history);
+  };
 
-    return (
-        <Fragment>
-            <h1 className="large text-primary">
-       Add An Experience
-      </h1>
-      <p className="lead">
-        <i className="fas fa-drum"></i> Add any bands or projects that you have worked on in the past
+  return (
+    <Fragment>
+      <h1 className='large text-primary'>Add An Experience</h1>
+      <p className='lead'>
+        <i className='fas fa-drum'></i> Add any bands or projects that you have
+        worked on in the past
       </p>
       <small>* = required field</small>
-      <form className="form" onSubmit={(e) => handleSubmit(e)}>
-        <div className="form-group">
-          <input type="text" placeholder="* Role" name="title" 
-          value={title} onChange={(e) => handleChange(e)}
-          required />
-        </div>
-        <div className="form-group">
-          <input type="text" placeholder="* Band/Project" name="company" 
-          value={company} onChange={(e) => handleChange(e)}
-          required />
-        </div>
-        <div className="form-group">
-          <input type="text" placeholder="Location" name="location" 
-          value={location} onChange={(e) => handleChange(e)}
+      <form className='form' onSubmit={(e) => handleSubmit(e)}>
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='* Role'
+            name='title'
+            value={title}
+            onChange={(e) => handleChange(e)}
+            required
           />
         </div>
-        <div className="form-group">
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='* Band/Project'
+            name='company'
+            value={company}
+            onChange={(e) => handleChange(e)}
+            required
+          />
+        </div>
+        <div className='form-group'>
+          <input
+            type='text'
+            placeholder='Location'
+            name='location'
+            value={location}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+        <div className='form-group'>
           <h4>From Date</h4>
-          <input type="date" name="from" 
-          value={from} onChange={(e) => handleChange(e)}
+          <input
+            type='date'
+            name='from'
+            value={from}
+            onChange={(e) => handleChange(e)}
           />
         </div>
-         <div className="form-group">
-          <p><input type="checkbox" name="current" 
-          checked={current}
-          value={current} onChange={(e) => {
-              setFormData({ ...formData, current: !current})
-              toggleDisabled(!toDateDisabled)
-          }}
-          /> {' '}Current Project</p>
+        <div className='form-group'>
+          <p>
+            <input
+              type='checkbox'
+              name='current'
+              checked={current}
+              value={current}
+              onChange={(e) => {
+                setFormData({ ...formData, current: !current });
+                toggleDisabled(!toDateDisabled);
+              }}
+            />{' '}
+            Current Project
+          </p>
         </div>
-        <div className="form-group">
+        <div className='form-group'>
           <h4>To Date</h4>
-          <input type="date" name="to" 
-          value={to} onChange={(e) => handleChange(e)}
-          disabled={toDateDisabled ? 'disabled' : ''}
+          <input
+            type='date'
+            name='to'
+            value={to}
+            onChange={(e) => handleChange(e)}
+            disabled={toDateDisabled ? 'disabled' : ''}
           />
         </div>
-        <div className="form-group">
+        <div className='form-group'>
           <textarea
-            name="description"
-            cols="30"
-            rows="5"
-            placeholder="Project Description"
-            value={description} onChange={(e) => handleChange(e)}
+            name='description'
+            cols='30'
+            rows='5'
+            placeholder='Project Description'
+            value={description}
+            onChange={(e) => handleChange(e)}
           ></textarea>
         </div>
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="dashboard">Go Back</Link>
+        <input type='submit' className='btn btn-primary my-1' />
+        <Link className='btn btn-light my-1' to='dashboard'>
+          Go Back
+        </Link>
       </form>
-            
-        </Fragment>
-    )
-}
+    </Fragment>
+  );
+};
 
 AddExperience.propTypes = {
-    addExperience: PropTypes.func.isRequired,
-}
+  addExperience: PropTypes.func.isRequired,
+};
 
-export default connect(null, { addExperience })(withRouter(AddExperience))
+export default connect(null, { addExperience })(withRouter(AddExperience));
